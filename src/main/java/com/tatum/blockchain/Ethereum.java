@@ -21,7 +21,7 @@ final public class Ethereum {
     /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/EthBroadcast" target="_blank">Tatum API documentation</a>
      */
-    public TransactionHash ethBroadcast(String txData, String signatureId) throws IOException, ExecutionException, InterruptedException {
+    public TransactionHash ethBroadcast(final String txData, final String signatureId) throws IOException, ExecutionException, InterruptedException {
         String uri = Strings.isNullOrEmpty(Env.getTatumApiKey()) ? TATUM_API_URL + "/v3/ethereum/broadcast" : Env.getTatumApiKey();
 
         var values = new HashMap<String, String>() {{
