@@ -4,180 +4,148 @@ import java.math.BigDecimal;
 
 public class EthTx implements IEthTx {
 
-    String blockHash = null;
-    Boolean status = false;
-    BigDecimal blockNumber = null;
-    String from = null;
-    BigDecimal gas = null;
-    String gasPrice = null;
-    String transactionHash = null;
-    String input = null;
-    BigDecimal nonce = null;
-    String to = null;
-    BigDecimal transactionIndex = null;
-    String value = null;
-    BigDecimal gasUsed = null;
-    BigDecimal cumulativeGasUsed = null;
-    String contractAddress = null;
-    IEthTxLogs[] logs;
+    private String blockHash;
+    private Boolean status;
+    private BigDecimal blockNumber;
+    private String from;
+    private BigDecimal gas;
+    private String gasPrice;
+    private String transactionHash;
+    private String input;
+    private BigDecimal nonce;
+    private String to;
+    private BigDecimal transactionIndex;
+    private String value;
+    private BigDecimal gasUsed;
+    private BigDecimal cumulativeGasUsed;
+    private String contractAddress;
+    private IEthTxLogs[] logs;
 
-    @Override
     public String getBlockHash() {
-        return this.blockHash;
+        return null;
     }
 
-    @Override
     public void setBlockHash(String blockHash) {
-        this.blockHash = blockHash;
+
     }
 
-    @Override
     public Boolean getStatus() {
-        return this.status;
+        return null;
     }
 
-    @Override
     public void setStatus(Boolean status) {
-        this.status = status;
+
     }
 
-    @Override
     public BigDecimal getBlockNumber() {
-        return this.blockNumber;
+        return null;
     }
 
-    @Override
     public void setBlockNumber(BigDecimal blockNumber) {
-        this.blockNumber = blockNumber;
+
     }
 
-    @Override
     public String getFrom() {
-        return this.from;
+        return null;
     }
 
-    @Override
     public void setFrom(String from) {
-        this.from = from;
+
     }
 
-    @Override
     public BigDecimal getGas() {
-        return this.gas;
+        return null;
     }
 
-    @Override
     public void setGas(BigDecimal gas) {
-        this.gas = gas;
+
     }
 
-    @Override
     public String getGasPrice() {
-        return this.gasPrice;
+        return null;
     }
 
-    @Override
     public void setGasPrice(String gasPrice) {
-        this.gasPrice = gasPrice;
+
     }
 
-    @Override
     public String getTransactionHash() {
-        return this.transactionHash;
+        return null;
     }
 
-    @Override
     public void setTransactionHash(String transactionHash) {
-        this.transactionHash = transactionHash;
+
     }
 
-    @Override
     public String getInput() {
-        return this.input;
+        return null;
     }
 
-    @Override
     public void setInput(String input) {
-        this.input = input;
+
     }
 
-    @Override
     public BigDecimal getNonce() {
-        return this.nonce;
+        return null;
     }
 
-    @Override
     public void setNonce(BigDecimal nonce) {
-        this.nonce = nonce;
+
     }
 
-    @Override
     public String getTo() {
-        return this.to;
+        return null;
     }
 
-    @Override
     public void setTo(String to) {
-        this.to = to;
+
     }
 
-    @Override
     public BigDecimal getTransactionIndex() {
-        return this.transactionIndex;
+        return null;
     }
 
-    @Override
     public void setTransactionIndex(BigDecimal transactionIndex) {
-        this.transactionIndex = transactionIndex;
+
     }
 
-    @Override
     public String getValue() {
-        return this.value;
+        return null;
     }
 
-    @Override
     public void setValue(String value) {
-        this.value = value;
+
     }
 
-    @Override
     public BigDecimal getGasUsed() {
-        return this.gasUsed;
+        return null;
     }
 
-    @Override
     public void setGasUsed(BigDecimal gasUsed) {
-        this.gasUsed = gasUsed;
+
     }
 
-    @Override
     public BigDecimal getCumulativeGasUsed() {
-        return this.cumulativeGasUsed;
+        return null;
     }
 
-    @Override
     public void setCumulativeGasUsed(BigDecimal cumulativeGasUsed) {
-        this.cumulativeGasUsed = cumulativeGasUsed;
+
     }
 
-    @Override
     public String getContractAddress() {
-        return this.getContractAddress();
+        return null;
     }
 
-    @Override
     public void setContractAddress(String contractAddress) {
-        this.contractAddress = contractAddress;
+
     }
 
-    @Override
     public IEthTxLogs[] getLogs() {
-        return this.logs;
+        return new IEthTxLogs[0];
     }
 
-    @Override
     public void setLogs(IEthTxLogs[] logs) {
-        this.logs = logs;
+
     }
 }

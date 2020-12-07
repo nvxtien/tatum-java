@@ -1,302 +1,178 @@
 package com.tatum.model.response.eth;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
-import com.google.common.base.Strings;
-import com.tatum.model.response.common.TransactionHash;
-import com.tatum.utils.Async;
-import com.tatum.utils.Env;
-
-import java.io.IOException;
 import java.math.BigDecimal;
-import java.util.HashMap;
-import java.util.concurrent.ExecutionException;
-
-import static com.tatum.constants.Constant.TATUM_API_URL;
 
 public class EthBlock implements IEthBlock {
 
-    /**
-     * Difficulty for this block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String difficulty;
-
-     /**
-     * The 'extra data' field of this block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String extraData;
-
-    /**
-     * The maximum gas allowed in this block.
-     * @type {number}
-     * @memberof EthBlock
-     */
-    BigDecimal gasLimit;
-
-    /**
-     * The total used gas by all transactions in this block.
-     * @type {number}
-     * @memberof EthBlock
-     */
-    BigDecimal gasUsed;
-
-    /**
-     * Hash of the block. 'null' when its pending block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String hash;
-
-    /**
-     * The bloom filter for the logs of the block. 'null' when its pending block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String logsBloom;
-
-    /**
-     * The address of the beneficiary to whom the mining rewards were given.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String miner;
-
-    /**
-     *
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String mixHash;
-
-    /**
-     * Hash of the generated proof-of-work. 'null' when its pending block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String nonce;
-
-    /**
-     * The block number. 'null' when its pending block.
-     * @type {number}
-     * @memberof EthBlock
-     */
-    BigDecimal number;
-
-    /**
-     * Hash of the parent block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String parentHash;
-
-    /**
-     *
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String receiptsRoot;
-
-    /**
-     * SHA3 of the uncles data in the block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String sha3Uncles;
-
-    /**
-     * The size of this block in bytes.
-     * @type {number}
-     * @memberof EthBlock
-     */
-    BigDecimal size;
-
-    /**
-     * The root of the final state trie of the block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String stateRoot;
-
-    /**
-     * The unix timestamp for when the block was collated.
-     * @type {number}
-     * @memberof EthBlock
-     */
-    BigDecimal timestamp;
-
-     /**
-     * Total difficulty of the chain until this block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String totalDifficulty;
-
-    /**
-     * Array of transactions.
-     * @type {Array<EthTx>}
-     * @memberof EthBlock
-     */
-    IEthTx[] transactions;
-
-    /**
-     * The root of the transaction trie of the block.
-     * @type {string}
-     * @memberof EthBlock
-     */
-    String transactionsRoot;
+    private String difficulty;
+    private String extraData;
+    private BigDecimal gasLimit;
+    private BigDecimal gasUsed;
+    private String hash;
+    private String logsBloom;
+    private String miner;
+    private String mixHash;
+    private String nonce;
+    private BigDecimal number;
+    private String parentHash;
+    private String receiptsRoot;
+    private String sha3Uncles;
+    private BigDecimal size;
+    private String stateRoot;
+    private BigDecimal timestamp;
+    private String totalDifficulty;
+    private IEthTx[] transactions;
+    private String transactionsRoot;
 
     public String getDifficulty() {
-        return difficulty;
+        return null;
     }
 
     public void setDifficulty(String difficulty) {
-        this.difficulty = difficulty;
+
     }
 
     public String getExtraData() {
-        return extraData;
+        return null;
     }
 
     public void setExtraData(String extraData) {
-        this.extraData = extraData;
+
     }
 
     public BigDecimal getGasLimit() {
-        return gasLimit;
+        return null;
     }
 
     public void setGasLimit(BigDecimal gasLimit) {
-        this.gasLimit = gasLimit;
+
     }
 
     public BigDecimal getGasUsed() {
-        return gasUsed;
+        return null;
     }
 
     public void setGasUsed(BigDecimal gasUsed) {
-        this.gasUsed = gasUsed;
+
     }
 
     public String getHash() {
-        return hash;
+        return null;
     }
 
     public void setHash(String hash) {
-        this.hash = hash;
+
     }
 
     public String getLogsBloom() {
-        return logsBloom;
+        return null;
     }
 
     public void setLogsBloom(String logsBloom) {
-        this.logsBloom = logsBloom;
+
     }
 
     public String getMiner() {
-        return miner;
+        return null;
     }
 
     public void setMiner(String miner) {
-        this.miner = miner;
+
     }
 
     public String getMixHash() {
-        return mixHash;
+        return null;
     }
 
     public void setMixHash(String mixHash) {
-        this.mixHash = mixHash;
+
     }
 
     public String getNonce() {
-        return nonce;
+        return null;
     }
 
     public void setNonce(String nonce) {
-        this.nonce = nonce;
+
     }
 
     public BigDecimal getNumber() {
-        return number;
+        return null;
     }
 
     public void setNumber(BigDecimal number) {
-        this.number = number;
+
     }
 
     public String getParentHash() {
-        return parentHash;
+        return null;
     }
 
     public void setParentHash(String parentHash) {
-        this.parentHash = parentHash;
+
     }
 
     public String getReceiptsRoot() {
-        return receiptsRoot;
+        return null;
     }
 
     public void setReceiptsRoot(String receiptsRoot) {
-        this.receiptsRoot = receiptsRoot;
+
     }
 
     public String getSha3Uncles() {
-        return sha3Uncles;
+        return null;
     }
 
     public void setSha3Uncles(String sha3Uncles) {
-        this.sha3Uncles = sha3Uncles;
+
     }
 
     public BigDecimal getSize() {
-        return size;
+        return null;
     }
 
     public void setSize(BigDecimal size) {
-        this.size = size;
+
     }
 
     public String getStateRoot() {
-        return stateRoot;
+        return null;
     }
 
     public void setStateRoot(String stateRoot) {
-        this.stateRoot = stateRoot;
+
     }
 
     public BigDecimal getTimestamp() {
-        return timestamp;
+        return null;
     }
 
     public void setTimestamp(BigDecimal timestamp) {
-        this.timestamp = timestamp;
+
     }
 
     public String getTotalDifficulty() {
-        return totalDifficulty;
+        return null;
     }
 
     public void setTotalDifficulty(String totalDifficulty) {
-        this.totalDifficulty = totalDifficulty;
+
     }
 
     public IEthTx[] getTransactions() {
-        return transactions;
+        return new IEthTx[0];
     }
 
     public void setTransactions(IEthTx[] transactions) {
-        this.transactions = transactions;
+
     }
 
     public String getTransactionsRoot() {
-        return transactionsRoot;
+        return null;
     }
 
     public void setTransactionsRoot(String transactionsRoot) {
-        this.transactionsRoot = transactionsRoot;
+
     }
 }

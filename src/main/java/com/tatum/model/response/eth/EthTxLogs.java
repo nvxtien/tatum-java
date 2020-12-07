@@ -9,70 +9,58 @@ import java.math.BigDecimal;
  */
 public class EthTxLogs implements IEthTxLogs {
 
-    String address = null;
-    String[] topic = new String[0];
-    String data = null;
-    BigDecimal logIndex = null;
-    BigDecimal transactionIndex = null;
-    String transactionHash = null;
+    private String address;
+    private String[] topic;
+    private String data;
+    private BigDecimal logIndex;
+    private BigDecimal transactionIndexl;
+    private String transactionHash;
 
-    @Override
     public String getAddress() {
-        return this.address;
+        return null;
     }
 
-    @Override
     public void setAddress(String address) {
-        this.address = address;
+
     }
 
-    @Override
     public String[] getTopic() {
-        return this.topic;
+        return new String[0];
     }
 
-    @Override
     public void setTopic(String[] topic) {
-        this.topic = topic;
+
     }
 
-    @Override
     public String getData() {
-        return this.data;
+        return null;
     }
 
-    @Override
     public void setData(String data) {
-        this.data = data;
+
     }
 
-    @Override
     public BigDecimal getLogIndex() {
-        return this.logIndex;
+        return null;
     }
 
-    @Override
     public void setLogIndex(BigDecimal logIndex) {
-        this.logIndex = logIndex;
+
     }
 
-    @Override
     public BigDecimal getTransactionIndex() {
-        return this.transactionIndex;
+        return null;
     }
 
-    @Override
     public void setTransactionIndex(BigDecimal transactionIndex) {
-        this.transactionIndex = transactionIndex;
+
     }
 
-    @Override
     public String getTransactionHash() {
-        return this.transactionHash;
+        return null;
     }
 
-    @Override
     public void setTransactionHash(String transactionHash) {
-        this.transactionHash = transactionHash;
+
     }
 }
