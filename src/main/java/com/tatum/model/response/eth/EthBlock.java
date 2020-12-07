@@ -3,142 +3,300 @@ package com.tatum.model.response.eth;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
 import com.tatum.model.response.common.TransactionHash;
+import com.tatum.utils.Async;
 import com.tatum.utils.Env;
 
 import java.io.IOException;
 import java.math.BigDecimal;
-import java.net.URI;
-import java.net.http.HttpClient;
-import java.net.http.HttpRequest;
-import java.net.http.HttpResponse;
-import java.time.Duration;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 import static com.tatum.constants.Constant.TATUM_API_URL;
 
-public class EthBlock {
+public class EthBlock implements IEthBlock {
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthBroadcast" target="_blank">Tatum API documentation</a>
+     * Difficulty for this block.
+     * @type {string}
+     * @memberof EthBlock
      */
-    public TransactionHash ethBroadcast(String txData, String signatureId) throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiKey()) ? TATUM_API_URL + "/v3/ethereum/broadcast" : Env.getTatumApiKey();
+    String difficulty;
 
-        var values = new HashMap<String, String>() {{
-            put("txData", txData);
-            put("signatureId", signatureId);
-        }};
-
-        var objectMapper = new ObjectMapper();
-        String requestBody = objectMapper.writeValueAsString(values);
-
-        String txId = postAsync(uri, Env.getTatumApiKey(), requestBody);
-        return new TransactionHash(txId);
-    }
+     /**
+     * The 'extra data' field of this block.
+     * @type {string}
+     * @memberof EthBlock
+     */
+    String extraData;
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthGetTransactionCount" target="_blank">Tatum API documentation</a>
+     * The maximum gas allowed in this block.
+     * @type {number}
+     * @memberof EthBlock
      */
-    public BigDecimal ethGetTransactionsCount(String address) throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/ethereum/transaction/count/" + address : Env.getTatumApiUrl();
-        String count = getAsync(uri, Env.getTatumApiKey());
-        // TO-DO
-        return new BigDecimal(count);
-    }
+    BigDecimal gasLimit;
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthGetCurrentBlock" target="_blank">Tatum API documentation</a>
+     * The total used gas by all transactions in this block.
+     * @type {number}
+     * @memberof EthBlock
      */
-    public EthBlock ethGetCurrentBlock() throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/ethereum/block/current" : Env.getTatumApiUrl();
-        String block = getAsync(uri, Env.getTatumApiKey());
-        // TO-DO
-        return new EthBlock();
-    }
+    BigDecimal gasUsed;
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthGetBlock" target="_blank">Tatum API documentation</a>
+     * Hash of the block. 'null' when its pending block.
+     * @type {string}
+     * @memberof EthBlock
      */
-    public EthBlock ethGetBlock(String hash) throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/ethereum/block/" + hash : Env.getTatumApiUrl();
-        String block = getAsync(uri, Env.getTatumApiKey());
-        // TO-DO
-        return new EthBlock();
-    }
+    String hash;
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthGetBalance" target="_blank">Tatum API documentation</a>
+     * The bloom filter for the logs of the block. 'null' when its pending block.
+     * @type {string}
+     * @memberof EthBlock
      */
-    public BigDecimal ethGetAccountBalance(String address) throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/ethereum/account/balance" + address : Env.getTatumApiUrl();
-        String balance = getAsync(uri, Env.getTatumApiKey());
-        // TO-DO
-        return new BigDecimal(balance);
-    }
+    String logsBloom;
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthErc20GetBalance" target="_blank">Tatum API documentation</a>
+     * The address of the beneficiary to whom the mining rewards were given.
+     * @type {string}
+     * @memberof EthBlock
      */
-    public BigDecimal ethGetAccountErc20Address(String address, String contractAddress) throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/ethereum/account/balance/erc20/" + address + "?contractAddress=" + contractAddress : Env.getTatumApiUrl();
-        String transaction = getAsync(uri, Env.getTatumApiKey());
-        // TO-DO
-        return new BigDecimal(transaction);
-    }
+    String miner;
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthGetTransaction" target="_blank">Tatum API documentation</a>
+     *
+     * @type {string}
+     * @memberof EthBlock
      */
-    public EthTx ethGetTransaction(String hash) throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/ethereum/transaction/" + hash : Env.getTatumApiUrl();
-        String transactions = getAsync(uri, Env.getTatumApiKey());
-        return new EthTx();
-    }
+    String mixHash;
 
     /**
-     * For more details, see <a href="https://tatum.io/apidoc#operation/EthGetTransactionByAddress" target="_blank">Tatum API documentation</a>
+     * Hash of the generated proof-of-work. 'null' when its pending block.
+     * @type {string}
+     * @memberof EthBlock
      */
-    public EthTx[] ethGetAccountTransactions(String address, Integer pageSize, Integer offset) throws IOException, ExecutionException, InterruptedException {
-        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/ethereum/transaction/" + address + "?pageSize=" + pageSize + "&offset=" + offset : Env.getTatumApiUrl();
-        String balance = getAsync(uri, Env.getTatumApiKey());
-        //TO-DO
-        return new EthTx[50];
+    String nonce;
+
+    /**
+     * The block number. 'null' when its pending block.
+     * @type {number}
+     * @memberof EthBlock
+     */
+    BigDecimal number;
+
+    /**
+     * Hash of the parent block.
+     * @type {string}
+     * @memberof EthBlock
+     */
+    String parentHash;
+
+    /**
+     *
+     * @type {string}
+     * @memberof EthBlock
+     */
+    String receiptsRoot;
+
+    /**
+     * SHA3 of the uncles data in the block.
+     * @type {string}
+     * @memberof EthBlock
+     */
+    String sha3Uncles;
+
+    /**
+     * The size of this block in bytes.
+     * @type {number}
+     * @memberof EthBlock
+     */
+    BigDecimal size;
+
+    /**
+     * The root of the final state trie of the block.
+     * @type {string}
+     * @memberof EthBlock
+     */
+    String stateRoot;
+
+    /**
+     * The unix timestamp for when the block was collated.
+     * @type {number}
+     * @memberof EthBlock
+     */
+    BigDecimal timestamp;
+
+     /**
+     * Total difficulty of the chain until this block.
+     * @type {string}
+     * @memberof EthBlock
+     */
+    String totalDifficulty;
+
+    /**
+     * Array of transactions.
+     * @type {Array<EthTx>}
+     * @memberof EthBlock
+     */
+    IEthTx[] transactions;
+
+    /**
+     * The root of the transaction trie of the block.
+     * @type {string}
+     * @memberof EthBlock
+     */
+    String transactionsRoot;
+
+    public String getDifficulty() {
+        return difficulty;
     }
 
-    private String postAsync(String uri, String apiKey, String requestBody) throws ExecutionException, InterruptedException {
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create(uri))
-                .timeout(Duration.ofMinutes(1))
-                .header("Content-Type", "application/json")
-                .headers("x-api-key", apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString(requestBody))
-                .build();
-
-        var client = HttpClient.newHttpClient();
-        return client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-                .thenApply(response -> {
-                    System.out.println(response.statusCode());
-                    return response;
-                })
-                .thenApply(HttpResponse::body).get();
+    public void setDifficulty(String difficulty) {
+        this.difficulty = difficulty;
     }
 
-    private String getAsync(String uri, String apiKey) throws ExecutionException, InterruptedException {
-        var request = HttpRequest.newBuilder()
-                .uri(URI.create(uri))
-                .timeout(Duration.ofMinutes(1))
-                .header("Content-Type", "application/json")
-                .headers("x-api-key", apiKey)
-                .POST(HttpRequest.BodyPublishers.ofString("{}"))
-                .build();
+    public String getExtraData() {
+        return extraData;
+    }
 
-        var client = HttpClient.newHttpClient();
-        return client.sendAsync(request, HttpResponse.BodyHandlers.ofString())
-                .thenApply(response -> {
-                    System.out.println(response.statusCode());
-                    return response;
-                })
-                .thenApply(HttpResponse::body).get();
+    public void setExtraData(String extraData) {
+        this.extraData = extraData;
+    }
+
+    public BigDecimal getGasLimit() {
+        return gasLimit;
+    }
+
+    public void setGasLimit(BigDecimal gasLimit) {
+        this.gasLimit = gasLimit;
+    }
+
+    public BigDecimal getGasUsed() {
+        return gasUsed;
+    }
+
+    public void setGasUsed(BigDecimal gasUsed) {
+        this.gasUsed = gasUsed;
+    }
+
+    public String getHash() {
+        return hash;
+    }
+
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    public String getLogsBloom() {
+        return logsBloom;
+    }
+
+    public void setLogsBloom(String logsBloom) {
+        this.logsBloom = logsBloom;
+    }
+
+    public String getMiner() {
+        return miner;
+    }
+
+    public void setMiner(String miner) {
+        this.miner = miner;
+    }
+
+    public String getMixHash() {
+        return mixHash;
+    }
+
+    public void setMixHash(String mixHash) {
+        this.mixHash = mixHash;
+    }
+
+    public String getNonce() {
+        return nonce;
+    }
+
+    public void setNonce(String nonce) {
+        this.nonce = nonce;
+    }
+
+    public BigDecimal getNumber() {
+        return number;
+    }
+
+    public void setNumber(BigDecimal number) {
+        this.number = number;
+    }
+
+    public String getParentHash() {
+        return parentHash;
+    }
+
+    public void setParentHash(String parentHash) {
+        this.parentHash = parentHash;
+    }
+
+    public String getReceiptsRoot() {
+        return receiptsRoot;
+    }
+
+    public void setReceiptsRoot(String receiptsRoot) {
+        this.receiptsRoot = receiptsRoot;
+    }
+
+    public String getSha3Uncles() {
+        return sha3Uncles;
+    }
+
+    public void setSha3Uncles(String sha3Uncles) {
+        this.sha3Uncles = sha3Uncles;
+    }
+
+    public BigDecimal getSize() {
+        return size;
+    }
+
+    public void setSize(BigDecimal size) {
+        this.size = size;
+    }
+
+    public String getStateRoot() {
+        return stateRoot;
+    }
+
+    public void setStateRoot(String stateRoot) {
+        this.stateRoot = stateRoot;
+    }
+
+    public BigDecimal getTimestamp() {
+        return timestamp;
+    }
+
+    public void setTimestamp(BigDecimal timestamp) {
+        this.timestamp = timestamp;
+    }
+
+    public String getTotalDifficulty() {
+        return totalDifficulty;
+    }
+
+    public void setTotalDifficulty(String totalDifficulty) {
+        this.totalDifficulty = totalDifficulty;
+    }
+
+    public IEthTx[] getTransactions() {
+        return transactions;
+    }
+
+    public void setTransactions(IEthTx[] transactions) {
+        this.transactions = transactions;
+    }
+
+    public String getTransactionsRoot() {
+        return transactionsRoot;
+    }
+
+    public void setTransactionsRoot(String transactionsRoot) {
+        this.transactionsRoot = transactionsRoot;
     }
 }
