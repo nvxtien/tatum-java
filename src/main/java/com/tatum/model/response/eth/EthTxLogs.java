@@ -7,48 +7,72 @@ import java.math.BigDecimal;
  * @export
  * @interface EthTxLogs
  */
-public interface EthTxLogs {
+public class EthTxLogs implements IEthTxLogs {
 
-    /**
-     * From which this event originated from.
-     * @type {string}
-     * @memberof EthTxLogs
-     */
     String address = null;
-
-    /**
-     * An array with max 4 32 Byte topics, topic 1-3 contains indexed parameters of the log.
-     * @type {Array<string>}
-     * @memberof EthTxLogs
-     */
     String[] topic = new String[0];
-
-    /**
-     * The data containing non-indexed log parameter.
-     * @type {string}
-     * @memberof EthTxLogs
-     */
     String data = null;
-
-    /**
-     * Integer of the event index position in the block.
-     * @type {number}
-     * @memberof EthTxLogs
-     */
     BigDecimal logIndex = null;
-
-    /**
-     * Integer of the transaction’s index position, the event was created in.
-     * @type {number}
-     * @memberof EthTxLogs
-     */
     BigDecimal transactionIndex = null;
-
-    /**
-     * Hash of the transaction this event was created in.
-     * @type {string}
-     * @memberof EthTxLogs
-     */
     String transactionHash = null;
 
+    @Override
+    public String getAddress() {
+        return this.address;
+    }
+
+    @Override
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    @Override
+    public String[] getTopic() {
+        return this.topic;
+    }
+
+    @Override
+    public void setTopic(String[] topic) {
+        this.topic = topic;
+    }
+
+    @Override
+    public String getData() {
+        return this.data;
+    }
+
+    @Override
+    public void setData(String data) {
+        this.data = data;
+    }
+
+    @Override
+    public BigDecimal getLogIndex() {
+        return this.logIndex;
+    }
+
+    @Override
+    public void setLogIndex(BigDecimal logIndex) {
+        this.logIndex = logIndex;
+    }
+
+    @Override
+    public BigDecimal getTransactionIndex() {
+        return this.transactionIndex;
+    }
+
+    @Override
+    public void setTransactionIndex(BigDecimal transactionIndex) {
+        this.transactionIndex = transactionIndex;
+    }
+
+    @Override
+    public String getTransactionHash() {
+        return this.transactionHash;
+    }
+
+    @Override
+    public void setTransactionHash(String transactionHash) {
+        this.transactionHash = transactionHash;
+    }
 }

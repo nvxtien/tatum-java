@@ -14,110 +14,126 @@ public interface IEthTx {
      * @type {string}
      * @memberof EthTx
      */
-    String blockHash = null;
+    String getBlockHash();
+    void setBlockHash(String blockHash);
 
     /**
      * TRUE if the transaction was successful, FALSE, if the EVM reverted the transaction.
      * @type {boolean}
      * @memberof EthTx
      */
-    Boolean status = false;
+    Boolean getStatus();
+    void setStatus(Boolean status);
 
     /**
      * Block number where this transaction was in.
      * @type {number}
      * @memberof EthTx
      */
-    BigDecimal blockNumber = null;
+    BigDecimal getBlockNumber();
+    void setBlockNumber(BigDecimal blockNumber);
 
     /**
      * Address of the sender.
      * @type {string}
      * @memberof EthTx
      */
-    String from = null;
+    String getFrom();
+    void setFrom(String from);
 
     /**
      * Gas provided by the sender.
      * @type {number}
      * @memberof EthTx
      */
-    BigDecimal gas = null;
+    BigDecimal getGas();
+    void setGas(BigDecimal gas);
 
     /**
      * Gas price provided by the sender in wei.
      * @type {string}
      * @memberof EthTx
      */
-    String gasPrice = null;
+    String getGasPrice();
+    void setGasPrice(String gasPrice);
 
      /**
      * Hash of the transaction.
      * @type {string}
      * @memberof EthTx
      */
-    String transactionHash = null;
+    String getTransactionHash();
+    void setTransactionHash(String transactionHash);
 
     /**
      * The data sent along with the transaction.
      * @type {string}
      * @memberof EthTx
      */
-    String input = null;
+    String getInput();
+    void setInput(String input);
 
     /**
      * The number of transactions made by the sender prior to this one.
      * @type {number}
      * @memberof EthTx
      */
-    BigDecimal nonce = null;
+    BigDecimal getNonce();
+    void setNonce(BigDecimal nonce);
 
     /**
      * Address of the receiver. 'null' when its a contract creation transaction.
      * @type {string}
      * @memberof EthTx
      */
-    String to = null;
+    String getTo();
+    void setTo(String to);
 
     /**
      * Integer of the transactions index position in the block.
      * @type {number}
      * @memberof EthTx
      */
-    BigDecimal transactionIndex = null;
+    BigDecimal getTransactionIndex();
+    void setTransactionIndex(BigDecimal transactionIndex);
 
     /**
      * Value transferred in wei.
      * @type {string}
      * @memberof EthTx
      */
-    String value = null;
+    String getValue();
+    void setValue(String value);
 
     /**
      * The amount of gas used by this specific transaction alone.
      * @type {number}
      * @memberof EthTx
      */
-    BigDecimal gasUsed = null;
+    BigDecimal getGasUsed();
+    void setGasUsed(BigDecimal gasUsed);
 
     /**
      * The total amount of gas used when this transaction was executed in the block.
      * @type {number}
      * @memberof EthTx
      */
-    BigDecimal cumulativeGasUsed = null;
+    BigDecimal getCumulativeGasUsed();
+    void setCumulativeGasUsed(BigDecimal cumulativeGasUsed);
 
     /**
      * The contract address created, if the transaction was a contract creation, otherwise null.
      * @type {string}
      * @memberof EthTx
      */
-    String contractAddress = null;
+    String getContractAddress();
+    void setContractAddress(String contractAddress);
 
     /**
      * Log events, that happened in this transaction.
      * @type {Array<EthTxLogs>}
      * @memberof EthTx
      */
-    EthTxLogs[] logs = new EthTxLogs[0];
+    IEthTxLogs[] getLogs();
+    void setLogs(IEthTxLogs[] logs);
 }
