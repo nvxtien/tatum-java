@@ -1,18 +1,18 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.common;
 
 import java.math.BigDecimal;
 
 /**
  *
  * @export
- * @interface BtcTxCoin
+ * @interface ITxCoin
  */
-public interface IBtcTxCoin {
+public interface ITxCoin {
 
     /**
      *
      * @type {number}
-     * @memberof BtcTxCoin
+     * @memberof ITxCoin
      */
     BigDecimal getVersion();
     void setVersion(BigDecimal version);
@@ -20,7 +20,7 @@ public interface IBtcTxCoin {
     /**
      *
      * @type {number}
-     * @memberof BtcTxCoin
+     * @memberof ITxCoin
      */
     BigDecimal getHeight();
     void setHeight(BigDecimal height);
@@ -28,7 +28,7 @@ public interface IBtcTxCoin {
     /**
      *
      * @type {number}
-     * @memberof BtcTxCoin
+     * @memberof ITxCoin
      */
     BigDecimal getValue();
     void setValue(BigDecimal value);
@@ -36,7 +36,7 @@ public interface IBtcTxCoin {
     /**
      *
      * @type {string}
-     * @memberof BtcTxCoin
+     * @memberof ITxCoin
      */
     String getScript();
     void setScript(String script);
@@ -44,7 +44,7 @@ public interface IBtcTxCoin {
     /**
      * Sender address.
      * @type {string}
-     * @memberof BtcTxCoin
+     * @memberof ITxCoin
      */
     String getAddress();
     void setAddress(String address);
@@ -52,7 +52,7 @@ public interface IBtcTxCoin {
     /**
      * Coinbase transaction - miner fee.
      * @type {boolean}
-     * @memberof BtcTxCoin
+     * @memberof ITxCoin
      */
     Boolean getCoinbase();
     void setCoinbase(Boolean coinbase);

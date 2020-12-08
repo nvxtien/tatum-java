@@ -1,4 +1,4 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
 
 import io.tatum.model.response.common.ITxCoin;
 import io.tatum.model.response.common.ITxInputs;
@@ -6,7 +6,7 @@ import io.tatum.model.response.common.ITxPrevout;
 
 import java.math.BigDecimal;
 
-public class BtcTxInputs implements ITxInputs {
+public class LtcTxInputs implements ITxInputs {
 
     private ITxPrevout prevout;
     private String script;

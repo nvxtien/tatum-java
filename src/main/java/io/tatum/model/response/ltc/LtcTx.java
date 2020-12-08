@@ -1,24 +1,25 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
 
 import io.tatum.model.response.common.ITxInputs;
 import io.tatum.model.response.common.ITxOutputs;
 
 import java.math.BigDecimal;
 
-public class BtcTx implements IBtcTx {
+public class LtcTx implements ILtcTx {
 
     private String hash;
     private String witnessHash;
-    private BigDecimal fee;
-    private BigDecimal rate;
-    private BigDecimal mtime;
+    private String fee;
+    private String rate;
+    private BigDecimal ps;
     private BigDecimal height;
     private String block;
-    private BigDecimal time;
+    private BigDecimal ts;
     private BigDecimal index;
-    private BigDecimal version;
-    private ITxInputs[] inputs;
     private ITxOutputs[] outputs;
+    private BigDecimal flag;
+    private ITxInputs[] inputs;
+    private BigDecimal version;
     private BigDecimal locktime;
 
     @Override
@@ -42,33 +43,33 @@ public class BtcTx implements IBtcTx {
     }
 
     @Override
-    public BigDecimal getFee() {
+    public String getFee() {
         return fee;
     }
 
     @Override
-    public void setFee(BigDecimal fee) {
+    public void setFee(String fee) {
         this.fee = fee;
     }
 
     @Override
-    public BigDecimal getRate() {
+    public String getRate() {
         return rate;
     }
 
     @Override
-    public void setRate(BigDecimal rate) {
+    public void setRate(String rate) {
         this.rate = rate;
     }
 
     @Override
-    public BigDecimal getMtime() {
-        return mtime;
+    public BigDecimal getPs() {
+        return ps;
     }
 
     @Override
-    public void setMtime(BigDecimal mtime) {
-        this.mtime = mtime;
+    public void setPs(BigDecimal ps) {
+        this.ps = ps;
     }
 
     @Override
@@ -92,13 +93,13 @@ public class BtcTx implements IBtcTx {
     }
 
     @Override
-    public BigDecimal getTime() {
-        return time;
+    public BigDecimal getTs() {
+        return ts;
     }
 
     @Override
-    public void setTime(BigDecimal time) {
-        this.time = time;
+    public void setTs(BigDecimal ts) {
+        this.ts = ts;
     }
 
     @Override
@@ -119,6 +120,16 @@ public class BtcTx implements IBtcTx {
     @Override
     public void setVersion(BigDecimal version) {
         this.version = version;
+    }
+
+    @Override
+    public BigDecimal getFlag() {
+        return flag;
+    }
+
+    @Override
+    public void setFlag(BigDecimal flag) {
+        this.flag = flag;
     }
 
     @Override

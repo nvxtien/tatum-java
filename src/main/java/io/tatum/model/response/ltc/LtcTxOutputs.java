@@ -1,10 +1,10 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
 
 import io.tatum.model.response.common.ITxOutputs;
 
 import java.math.BigDecimal;
 
-public class BtcTxOutputs implements ITxOutputs {
+public class LtcTxOutputs implements ITxOutputs {
 
     private BigDecimal value;
     private String script;

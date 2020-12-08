@@ -1,4 +1,4 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.common;
 
 import java.math.BigDecimal;
 
@@ -7,7 +7,7 @@ import java.math.BigDecimal;
  * @export
  * @interface BtcUTXO
  */
-public interface IBtcUTXO {
+public interface IUTXO {
 
     /**
      * Version of the UTXO.

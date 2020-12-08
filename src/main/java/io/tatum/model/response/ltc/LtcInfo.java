@@ -1,10 +1,10 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
 
 import io.tatum.model.response.common.IChainInfo;
 
 import java.math.BigDecimal;
 
-public class BtcInfo implements IChainInfo {
+public class LtcInfo implements IChainInfo {
 
     private String chain;
     private BigDecimal blocks;

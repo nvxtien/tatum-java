@@ -1,19 +1,18 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
 
 import java.math.BigDecimal;
 
-public class BtcBlock implements IBtcBlock {
+public class LtcBlock implements ILtcBlock {
 
     private String hash;
     private BigDecimal height;
-    private BigDecimal depth;
     private BigDecimal version;
     private String prevBlock;
     private String merkleRoot;
-    private BigDecimal time;
+    private BigDecimal ts;
     private BigDecimal bits;
     private BigDecimal nonce;
-    private IBtcTx[] txs;
+    private ILtcTx[] txs;
 
     @Override
     public String getHash() {
@@ -25,7 +24,6 @@ public class BtcBlock implements IBtcBlock {
         this.hash = hash;
     }
 
-    @Override
     public BigDecimal getHeight() {
         return height;
     }
@@ -33,16 +31,6 @@ public class BtcBlock implements IBtcBlock {
     @Override
     public void setHeight(BigDecimal height) {
         this.height = height;
-    }
-
-    @Override
-    public BigDecimal getDepth() {
-        return depth;
-    }
-
-    @Override
-    public void setDepth(BigDecimal depth) {
-        this.depth = depth;
     }
 
     @Override
@@ -76,13 +64,13 @@ public class BtcBlock implements IBtcBlock {
     }
 
     @Override
-    public BigDecimal getTime() {
-        return time;
+    public BigDecimal getTs() {
+        return ts;
     }
 
     @Override
-    public void setTime(BigDecimal time) {
-        this.time = time;
+    public void setTs(BigDecimal ts) {
+        this.ts = ts;
     }
 
     @Override
@@ -106,12 +94,12 @@ public class BtcBlock implements IBtcBlock {
     }
 
     @Override
-    public IBtcTx[] getTxs() {
+    public ILtcTx[] getTxs() {
         return txs;
     }
 
     @Override
-    public void setTxs(IBtcTx[] txs) {
+    public void setTxs(ILtcTx[] txs) {
         this.txs = txs;
     }
 }

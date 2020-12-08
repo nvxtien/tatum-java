@@ -1,17 +1,18 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
+
 
 import io.tatum.model.response.common.ITxPrevout;
 
 import java.math.BigDecimal;
 
-public class BtcTxPrevout implements ITxPrevout {
+public class LtcTxPrevout implements ITxPrevout {
 
     private String hash;
     private BigDecimal index;
 
     @Override
     public String getHash() {
-        return hash;
+        return this.hash;
     }
 
     @Override
@@ -21,12 +22,11 @@ public class BtcTxPrevout implements ITxPrevout {
 
     @Override
     public BigDecimal getIndex() {
-        return index;
+        return this.index;
     }
 
     @Override
     public void setIndex(BigDecimal index) {
         this.index = index;
     }
-
 }

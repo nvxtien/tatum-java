@@ -1,17 +1,17 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.common;
 
 import java.math.BigDecimal;
 
 /**
  *
  * @export
- * @interface BtcTxPrevout
+ * @interface ITxPrevout
  */
-public interface IBtcTxPrevout {
+public interface ITxPrevout {
     /**
      * Transaction hash of the input.
      * @type {string}
-     * @memberof BtcTxPrevout
+     * @memberof ITxPrevout
      */
     String getHash();
     void setHash(String hash);
@@ -19,7 +19,7 @@ public interface IBtcTxPrevout {
     /**
      * Transaction index of the input.
      * @type {number}
-     * @memberof BtcTxPrevout
+     * @memberof ITxPrevout
      */
     BigDecimal getIndex();
     void setIndex(BigDecimal index);

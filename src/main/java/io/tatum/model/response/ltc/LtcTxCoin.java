@@ -1,10 +1,10 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
 
 import io.tatum.model.response.common.ITxCoin;
 
 import java.math.BigDecimal;
 
-public class BtcTxCoin implements ITxCoin {
+public class LtcTxCoin implements ITxCoin {
 
     private BigDecimal version;
     private BigDecimal height;

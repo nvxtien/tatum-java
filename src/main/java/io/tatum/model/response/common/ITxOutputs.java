@@ -1,13 +1,13 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.common;
 
 import java.math.BigDecimal;
 
-public interface IBtcTxOutputs {
+public interface ITxOutputs {
 
     /**
      * Sent amount in satoshis.
      * @type {number}
-     * @memberof BtcTxOutputs
+     * @memberof ITxOutputs
      */
     BigDecimal getValue();
     void setValue(BigDecimal value);
@@ -15,7 +15,7 @@ public interface IBtcTxOutputs {
     /**
      * Transaction script.
      * @type {string}
-     * @memberof BtcTxOutputs
+     * @memberof ITxOutputs
      */
     String getScript();
     void setScript(String script);
@@ -23,7 +23,7 @@ public interface IBtcTxOutputs {
     /**
      * Recipient address.
      * @type {string}
-     * @memberof BtcTxOutputs
+     * @memberof ITxOutputs
      */
     String getAddress();
     void setAddress(String address);

@@ -1,17 +1,19 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.ltc;
 
-import io.tatum.model.response.common.ITxCoin;
+import io.tatum.model.response.common.IUTXO;
 
 import java.math.BigDecimal;
 
-public class BtcTxCoin implements ITxCoin {
+public class LtcUTXO implements IUTXO {
 
     private BigDecimal version;
     private BigDecimal height;
     private BigDecimal value;
-    private String script;
+    private BigDecimal script;
     private String address;
     private Boolean coinbase;
+    private String hash;
+    private BigDecimal index;
 
     @Override
     public BigDecimal getVersion() {
@@ -34,23 +36,23 @@ public class BtcTxCoin implements ITxCoin {
     }
 
     @Override
-    public BigDecimal getValue() {
-        return value;
-    }
-
-    @Override
     public void setValue(BigDecimal value) {
         this.value = value;
     }
 
     @Override
-    public String getScript() {
+    public BigDecimal getScript() {
         return script;
     }
 
     @Override
-    public void setScript(String script) {
+    public void setScript(BigDecimal script) {
         this.script = script;
+    }
+
+    @Override
+    public BigDecimal getValue() {
+        return value;
     }
 
     @Override
@@ -71,5 +73,25 @@ public class BtcTxCoin implements ITxCoin {
     @Override
     public void setCoinbase(Boolean coinbase) {
         this.coinbase = coinbase;
+    }
+
+    @Override
+    public String getHash() {
+        return hash;
+    }
+
+    @Override
+    public void setHash(String hash) {
+        this.hash = hash;
+    }
+
+    @Override
+    public BigDecimal getIndex() {
+        return index;
+    }
+
+    @Override
+    public void setIndex(BigDecimal index) {
+        this.index = index;
     }
 }

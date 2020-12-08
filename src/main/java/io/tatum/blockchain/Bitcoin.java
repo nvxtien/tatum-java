@@ -3,9 +3,7 @@ package io.tatum.blockchain;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
 import io.tatum.model.response.btc.*;
-import io.tatum.model.response.common.BlockHash;
-import io.tatum.model.response.common.IBlockHash;
-import io.tatum.model.response.common.TransactionHash;
+import io.tatum.model.response.common.*;
 import io.tatum.utils.Async;
 import io.tatum.utils.Env;
 
@@ -39,7 +37,7 @@ public final class Bitcoin {
     /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/BtcGetBlockChainInfo" target="_blank">Tatum API documentation</a>
      */
-    public IBtcInfo btcGetCurrentBlock() throws IOException, ExecutionException, InterruptedException {
+    public IChainInfo btcGetCurrentBlock() throws IOException, ExecutionException, InterruptedException {
         String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/bitcoin/info" : Env.getTatumApiUrl();
         String block = Async.get(uri, Env.getTatumApiKey());
         // TO-DO
@@ -69,7 +67,7 @@ public final class Bitcoin {
     /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/BtcGetUTXO" target="_blank">Tatum API documentation</a>
      */
-    public IBtcUTXO btcGetUTXO(String hash, BigDecimal i) throws IOException, ExecutionException, InterruptedException {
+    public IUTXO btcGetUTXO(String hash, BigDecimal i) throws IOException, ExecutionException, InterruptedException {
         String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/bitcoin/utxo/" + hash + "/" + i : Env.getTatumApiUrl();
         String utxo = Async.get(uri, Env.getTatumApiKey());
         // TO-DO

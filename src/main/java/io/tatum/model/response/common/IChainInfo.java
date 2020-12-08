@@ -1,18 +1,18 @@
-package io.tatum.model.response.btc;
+package io.tatum.model.response.common;
 
 import java.math.BigDecimal;
 
 /**
  *
  * @export
- * @interface BtcInfo
+ * @interface IChainInfo
  */
-public interface IBtcInfo {
+public interface IChainInfo {
 
     /**
      * Chain of the blockchain, main or test.
      * @type {string}
-     * @memberof BtcInfo
+     * @memberof IChainInfo
      */
     String getChain();
     void setChain(String chain);
@@ -20,7 +20,7 @@ public interface IBtcInfo {
     /**
      * Last block.
      * @type {number}
-     * @memberof BtcInfo
+     * @memberof IChainInfo
      */
     BigDecimal getBlocks();
     void setBlocks(BigDecimal blocks);
@@ -28,7 +28,7 @@ public interface IBtcInfo {
     /**
      * Last headers.
      * @type {number}
-     * @memberof BtcInfo
+     * @memberof IChainInfo
      */
     BigDecimal getHeaders();
     void setHeaders(BigDecimal headers);
@@ -36,7 +36,7 @@ public interface IBtcInfo {
     /**
      * Hash of the last block.
      * @type {string}
-     * @memberof BtcInfo
+     * @memberof IChainInfo
      */
     String getBestblockhash();
     void setBestblockhash(String bestblockhash);
@@ -44,7 +44,7 @@ public interface IBtcInfo {
     /**
      * Difficulty of the algorithm.
      * @type {number}
-     * @memberof BtcInfo
+     * @memberof IChainInfo
      */
     BigDecimal getDifficulty();
     void setDifficulty(BigDecimal difficulty);
