@@ -1,4 +1,4 @@
-package com.tatum.blockchain;
+package io.tatum.blockchain;
 
 import org.junit.Test;
 
