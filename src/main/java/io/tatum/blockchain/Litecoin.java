@@ -58,8 +58,6 @@ public final class Litecoin {
         return new LtcBlock();
     }
 
-    ;
-
     /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/LtcGetBlockHash" target="_blank">Tatum API documentation</a>
      */
