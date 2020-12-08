@@ -16,7 +16,7 @@ import java.util.concurrent.ExecutionException;
 
 import static io.tatum.constants.Constant.TATUM_API_URL;
 
-final public class Ethereum {
+public final class Ethereum {
 
     /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/EthBroadcast" target="_blank">Tatum API documentation</a>
