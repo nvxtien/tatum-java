@@ -1,13 +1,11 @@
 package io.tatum.model.response.bch;
 
-public class BchTxScriptPubKey {
+public class BchTxScriptPubKey implements IBchTxScriptPubKey {
 
-    /**
-     *
-     * @type {string}
-     * @memberof BchTxScriptPubKey
-     */
-    String hex;
+    private String hex;
+    private String asm;
+    private String[] addresses;
+    private String type;
 
     public String getHex() {
         return hex;
@@ -17,13 +15,6 @@ public class BchTxScriptPubKey {
         this.hex = hex;
     }
 
-    /**
-     *
-     * @type {string}
-     * @memberof BchTxScriptPubKey
-     */
-    String asm;
-
     public String getAsm() {
         return asm;
     }
@@ -32,13 +23,6 @@ public class BchTxScriptPubKey {
         this.asm = asm;
     }
 
-    /**
-     *
-     * @type {Array<string>}
-     * @memberof BchTxScriptPubKey
-     */
-    String[] addresses;
-
     public String[] getAddresses() {
         return addresses;
     }
@@ -46,13 +30,6 @@ public class BchTxScriptPubKey {
     public void setAddresses(String[] addresses) {
         this.addresses = addresses;
     }
-
-    /**
-     *
-     * @type {string}
-     * @memberof BchTxScriptPubKey
-     */
-    String type;
 
     public String getType() {
         return type;

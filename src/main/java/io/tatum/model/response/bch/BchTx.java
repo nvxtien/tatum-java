@@ -1,35 +1,62 @@
 package io.tatum.model.response.bch;
 
-public class BchTx {
+import java.math.BigDecimal;
 
-    /**
-     *
-     * @type {string}
-     * @memberof BchTx
-     */
-    txid: string;
-    /**
-     *
-     * @type {number}
-     * @memberof BchTx
-     */
-    version: number;
-    /**
-     *
-     * @type {number}
-     * @memberof BchTx
-     */
-    locktime: number;
-    /**
-     *
-     * @type {Array<BchTxVin>}
-     * @memberof BchTx
-     */
-    vin: BchTxVin[];
-    /**
-     *
-     * @type {Array<BchTxVout>}
-     * @memberof BchTx
-     */
-    vout: BchTxVout[];
+public class BchTx implements IBchTx {
+
+    private String txid;
+    private BigDecimal version;
+    private BigDecimal locktime;
+    private IBchTxVin[] vin;
+    private IBchTxVout[] vout;
+
+    @Override
+    public String getTxid() {
+        return txid;
+    }
+
+    @Override
+    public void setTxid(String txid) {
+        this.txid = txid;
+    }
+
+    @Override
+    public BigDecimal getVersion() {
+        return version;
+    }
+
+    @Override
+    public void setVersion(BigDecimal version) {
+        this.version = version;
+    }
+
+    @Override
+    public BigDecimal getLocktime() {
+        return locktime;
+    }
+
+    @Override
+    public void setLocktime(BigDecimal locktime) {
+        this.locktime = locktime;
+    }
+
+    @Override
+    public IBchTxVin[] getVin() {
+        return vin;
+    }
+
+    @Override
+    public void setVin(IBchTxVin[] vin) {
+        this.vin = vin;
+    }
+
+    @Override
+    public IBchTxVout[] getVout() {
+        return vout;
+    }
+
+    @Override
+    public void setVout(IBchTxVout[] vout) {
+        this.vout = vout;
+    }
 }

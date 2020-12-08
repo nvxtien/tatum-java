@@ -1,18 +1,18 @@
-package io.tatum.model.response.common;
+package io.tatum.model.response.bch;
 
 import java.math.BigDecimal;
 
 /**
  * @export
- * @interface IChainInfo
+ * @interface BchInfo
  */
-public interface IChainInfo {
+public interface IBchInfo {
 
     /**
      * Chain of the blockchain, main or test.
      *
      * @type {string}
-     * @memberof IChainInfo
+     * @memberof BchInfo
      */
     String getChain();
 
@@ -22,37 +22,27 @@ public interface IChainInfo {
      * Last block.
      *
      * @type {number}
-     * @memberof IChainInfo
+     * @memberof BchInfo
      */
     BigDecimal getBlocks();
 
     void setBlocks(BigDecimal blocks);
 
     /**
-     * Last headers.
-     *
-     * @type {number}
-     * @memberof IChainInfo
-     */
-    BigDecimal getHeaders();
-
-    void setHeaders(BigDecimal headers);
-
-    /**
      * Hash of the last block.
      *
      * @type {string}
-     * @memberof IChainInfo
+     * @memberof BchInfo
      */
     String getBestblockhash();
 
     void setBestblockhash(String bestblockhash);
 
     /**
-     * Difficulty of the algorithm.
+     * Difficulty of the PoW algorithm.
      *
      * @type {number}
-     * @memberof IChainInfo
+     * @memberof BchInfo
      */
     BigDecimal getDifficulty();
 

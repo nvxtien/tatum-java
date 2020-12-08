@@ -3,62 +3,34 @@ package io.tatum.model.response.bch;
 public interface IBchTxScriptPubKey {
 
     /**
-     *
      * @type {string}
      * @memberof BchTxScriptPubKey
      */
-    String hex;
+    String getHex();
 
-    public String getHex() {
-        return hex;
-    }
-
-    public void setHex(String hex) {
-        this.hex = hex;
-    }
+    void setHex(String hex);
 
     /**
-     *
      * @type {string}
      * @memberof BchTxScriptPubKey
      */
-    String asm;
+    String getAsm();
 
-    public String getAsm() {
-        return asm;
-    }
-
-    public void setAsm(String asm) {
-        this.asm = asm;
-    }
+    void setAsm(String asm);
 
     /**
-     *
      * @type {Array<string>}
      * @memberof BchTxScriptPubKey
      */
-    String[] addresses;
+    String[] getAddresses();
 
-    public String[] getAddresses() {
-        return addresses;
-    }
-
-    public void setAddresses(String[] addresses) {
-        this.addresses = addresses;
-    }
+    void setAddresses(String[] addresses);
 
     /**
-     *
      * @type {string}
      * @memberof BchTxScriptPubKey
      */
-    String type;
+    String getType();
 
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
+    void setType(String type);
 }
