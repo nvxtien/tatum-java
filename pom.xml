@@ -11,9 +11,9 @@
         <java.version>1.11</java.version>
     </properties>
 
-    <name>java-tatum</name>
-    <description>Java Tatum</description>
-    <packaging>jar</packaging>
+    <name>Tatum API client</name>
+    <description>Tatum API client allows Java projects to interact with Tatum API.</description>
+    <url>https://tatum.io/</url>
 
     <dependencies>
 
