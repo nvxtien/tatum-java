@@ -26,8 +26,6 @@ public class XRP {
         return new BigDecimal(base_fee);
     }
 
-    ;
-
     /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/XrpGetAccountInfo" target="_blank">Tatum API documentation</a>
      */
