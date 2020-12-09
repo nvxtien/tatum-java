@@ -9,7 +9,7 @@ public class VetTx {
      * @type {string}
      * @memberof VetTx
      */
-    String id;
+    private String id;
 
     public String getId() {
         return id;
@@ -24,7 +24,7 @@ public class VetTx {
      * @type {string}
      * @memberof VetTx
      */
-    String chainTag;
+    private String chainTag;
 
     public String getChainTag() {
         return chainTag;
@@ -39,7 +39,7 @@ public class VetTx {
      * @type {string}
      * @memberof VetTx
      */
-    String blockRef;
+    private String blockRef;
 
     public String getBlockRef() {
         return blockRef;
@@ -54,7 +54,7 @@ public class VetTx {
      * @type {number}
      * @memberof VetTx
      */
-    BigDecimal expiration;
+    private BigDecimal expiration;
 
     public BigDecimal getExpiration() {
         return expiration;
@@ -69,7 +69,7 @@ public class VetTx {
      * @type {Array<VetTxClauses>}
      * @memberof VetTx
      */
-    VetTxClauses[] clauses;
+    private VetTxClauses[] clauses;
 
     public VetTxClauses[] getClauses() {
         return clauses;
@@ -84,7 +84,7 @@ public class VetTx {
      * @type {number}
      * @memberof VetTx
      */
-    BigDecimal gasPriceCoef;
+    private BigDecimal gasPriceCoef;
 
     public BigDecimal getGasPriceCoef() {
         return gasPriceCoef;
@@ -99,7 +99,7 @@ public class VetTx {
      * @type {number}
      * @memberof VetTx
      */
-    BigDecimal gas;
+    private BigDecimal gas;
 
     public BigDecimal getGas() {
         return gas;
@@ -114,7 +114,7 @@ public class VetTx {
      * @type {string}
      * @memberof VetTx
      */
-    String origin;
+    private String origin;
 
     public String getOrigin() {
         return origin;
@@ -129,7 +129,7 @@ public class VetTx {
      * @type {string}
      * @memberof VetTx
      */
-    String nonce;
+    private String nonce;
 
     public String getNonce() {
         return nonce;
@@ -144,7 +144,7 @@ public class VetTx {
      * @type {number}
      * @memberof VetTx
      */
-    BigDecimal size;
+    private BigDecimal size;
 
     public BigDecimal getSize() {
         return size;
@@ -159,7 +159,7 @@ public class VetTx {
      * @type {VetTxMeta}
      * @memberof VetTx
      */
-    VetTxMeta meta;
+    private VetTxMeta meta;
 
     public VetTxMeta getMeta() {
         return meta;
@@ -174,7 +174,7 @@ public class VetTx {
      * @type {number}
      * @memberof VetTx
      */
-    BigDecimal blockNumber;
+    private BigDecimal blockNumber;
 
     public BigDecimal getBlockNumber() {
         return blockNumber;

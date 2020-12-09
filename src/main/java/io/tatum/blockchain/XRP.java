@@ -1,6 +1,5 @@
 package io.tatum.blockchain;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
 import io.tatum.model.response.common.TransactionHash;
@@ -15,7 +14,6 @@ import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
 import static io.tatum.constants.Constant.TATUM_API_URL;
-import static java.awt.SystemColor.info;
 
 public class XRP {
 

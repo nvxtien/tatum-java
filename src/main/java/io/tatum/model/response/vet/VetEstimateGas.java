@@ -9,7 +9,7 @@ public class VetEstimateGas {
      * @type {string}
      * @memberof VetEstimateGas
      */
-    String from;
+    private String from;
 
     public String getFrom() {
         return from;
@@ -24,7 +24,7 @@ public class VetEstimateGas {
      * @type {string}
      * @memberof VetEstimateGas
      */
-    String to;
+    private String to;
 
     public String getTo() {
         return to;
@@ -39,7 +39,7 @@ public class VetEstimateGas {
      * @type {string}
      * @memberof VetEstimateGas
      */
-    String value;
+    private String value;
 
     public String getValue() {
         return value;
@@ -54,7 +54,7 @@ public class VetEstimateGas {
      * @type {string}
      * @memberof VetEstimateGas
      */
-    String data;
+    private String data;
 
     public String getData() {
         return data;
@@ -69,7 +69,7 @@ public class VetEstimateGas {
      * @type {number}
      * @memberof VetEstimateGas
      */
-    BigDecimal nonce;
+    private BigDecimal nonce;
 
     public BigDecimal getNonce() {
         return nonce;

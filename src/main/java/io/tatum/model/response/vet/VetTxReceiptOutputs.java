@@ -9,7 +9,7 @@ public class VetTxReceiptOutputs {
      * @type {Array<any>}
      * @memberof VetTxReceiptOutputs
      */
-    List[] events;
+    private List[] events;
 
     public List[] getEvents() {
         return events;
@@ -24,7 +24,7 @@ public class VetTxReceiptOutputs {
      * @type {Array<VetTxReceiptTransfers>}
      * @memberof VetTxReceiptOutputs
      */
-    VetTxReceiptTransfers[] transfers;
+    private VetTxReceiptTransfers[] transfers;
 
     public VetTxReceiptTransfers[] getTransfers() {
         return transfers;

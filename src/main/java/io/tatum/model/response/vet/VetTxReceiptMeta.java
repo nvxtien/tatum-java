@@ -8,7 +8,7 @@ public class VetTxReceiptMeta {
      * @type {string}
      * @memberof VetTxReceiptMeta
      */
-    String blockID;
+    private String blockID;
 
     public String getBlockID() {
         return blockID;
@@ -23,7 +23,7 @@ public class VetTxReceiptMeta {
      * @type {number}
      * @memberof VetTxReceiptMeta
      */
-    BigDecimal blockNumber;
+    private BigDecimal blockNumber;
 
     public BigDecimal getBlockNumber() {
         return blockNumber;
@@ -38,7 +38,7 @@ public class VetTxReceiptMeta {
      * @type {number}
      * @memberof VetTxReceiptMeta
      */
-    BigDecimal blockTimestamp;
+    private BigDecimal blockTimestamp;
 
     public BigDecimal getBlockTimestamp() {
         return blockTimestamp;
@@ -53,7 +53,7 @@ public class VetTxReceiptMeta {
      * @type {string}
      * @memberof VetTxReceiptMeta
      */
-    String txID;
+    private String txID;
 
     public String getTxID() {
         return txID;
@@ -68,7 +68,7 @@ public class VetTxReceiptMeta {
      * @type {string}
      * @memberof VetTxReceiptMeta
      */
-    String txOrigin;
+    private String txOrigin;
 
     public String getTxOrigin() {
         return txOrigin;

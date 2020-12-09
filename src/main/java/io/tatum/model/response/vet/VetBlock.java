@@ -9,7 +9,7 @@ public class VetBlock {
      * @type {number}
      * @memberof VetBlock
      */
-    BigDecimal number;
+    private BigDecimal number;
 
     public BigDecimal getNumber() {
         return number;
@@ -24,7 +24,7 @@ public class VetBlock {
      * @type {string}
      * @memberof VetBlock
      */
-    String id;
+    private String id;
 
     public String getId() {
         return id;
@@ -39,7 +39,7 @@ public class VetBlock {
      * @type {number}
      * @memberof VetBlock
      */
-    BigDecimal size;
+    private BigDecimal size;
 
     public BigDecimal getSize() {
         return size;
@@ -54,7 +54,7 @@ public class VetBlock {
      * @type {string}
      * @memberof VetBlock
      */
-    String parentID;
+    private String parentID;
 
     public String getParentID() {
         return parentID;
@@ -69,7 +69,7 @@ public class VetBlock {
      * @type {number}
      * @memberof VetBlock
      */
-    BigDecimal timestamp;
+    private BigDecimal timestamp;
 
     public BigDecimal getTimestamp() {
         return timestamp;
@@ -84,7 +84,7 @@ public class VetBlock {
      * @type {number}
      * @memberof VetBlock
      */
-    BigDecimal gasLimit;
+    private BigDecimal gasLimit;
 
     public BigDecimal getGasLimit() {
         return gasLimit;
@@ -99,7 +99,7 @@ public class VetBlock {
      * @type {string}
      * @memberof VetBlock
      */
-    String beneficiary;
+    private String beneficiary;
 
     public String getBeneficiary() {
         return beneficiary;
@@ -114,7 +114,7 @@ public class VetBlock {
      * @type {number}
      * @memberof VetBlock
      */
-    BigDecimal gasUsed;
+    private BigDecimal gasUsed;
 
     public BigDecimal getGasUsed() {
         return gasUsed;
@@ -129,7 +129,7 @@ public class VetBlock {
      * @type {number}
      * @memberof VetBlock
      */
-    BigDecimal totalScore;
+    private BigDecimal totalScore;
 
     public BigDecimal getTotalScore() {
         return totalScore;
@@ -144,7 +144,7 @@ public class VetBlock {
      * @type {string}
      * @memberof VetBlock
      */
-    String txsRoot;
+    private String txsRoot;
 
     public String getTxsRoot() {
         return txsRoot;
@@ -159,7 +159,7 @@ public class VetBlock {
      * @type {number}
      * @memberof VetBlock
      */
-    BigDecimal txsFeatures;
+    private BigDecimal txsFeatures;
 
     public BigDecimal getTxsFeatures() {
         return txsFeatures;
@@ -174,7 +174,7 @@ public class VetBlock {
      * @type {string}
      * @memberof VetBlock
      */
-    String stateRoot;
+    private String stateRoot;
 
     public String getStateRoot() {
         return stateRoot;
@@ -189,7 +189,7 @@ public class VetBlock {
      * @type {string}
      * @memberof VetBlock
      */
-    String receiptsRoot;
+    private String receiptsRoot;
 
     public String getReceiptsRoot() {
         return receiptsRoot;
@@ -204,7 +204,7 @@ public class VetBlock {
      * @type {string}
      * @memberof VetBlock
      */
-    String signer;
+    private String signer;
 
     public String getSigner() {
         return signer;
@@ -219,7 +219,7 @@ public class VetBlock {
      * @type {Array<string>}
      * @memberof VetBlock
      */
-    String[] transactions;
+    private String[] transactions;
 
     public String[] getTransactions() {
         return transactions;

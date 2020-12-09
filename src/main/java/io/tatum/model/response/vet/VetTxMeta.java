@@ -9,7 +9,7 @@ public class VetTxMeta {
      * @type {string}
      * @memberof VetTxMeta
      */
-    String blockID;
+    private String blockID;
 
     public String getBlockID() {
         return blockID;
@@ -24,7 +24,7 @@ public class VetTxMeta {
      * @type {number}
      * @memberof VetTxMeta
      */
-    BigDecimal blockNumber;
+    private BigDecimal blockNumber;
 
     public BigDecimal getBlockNumber() {
         return blockNumber;
@@ -39,7 +39,7 @@ public class VetTxMeta {
      * @type {number}
      * @memberof VetTxMeta
      */
-    BigDecimal blockTimestamp;
+    private BigDecimal blockTimestamp;
 
     public BigDecimal getBlockTimestamp() {
         return blockTimestamp;

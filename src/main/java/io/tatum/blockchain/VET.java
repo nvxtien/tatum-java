@@ -4,11 +4,15 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
 import io.tatum.model.request.EstimateGasVet;
 import io.tatum.model.response.common.TransactionHash;
+import io.tatum.model.response.vet.VetBlock;
 import io.tatum.model.response.vet.VetEstimateGas;
+import io.tatum.model.response.vet.VetTx;
+import io.tatum.model.response.vet.VetTxReceipt;
 import io.tatum.utils.Async;
 import io.tatum.utils.Env;
 
 import java.io.IOException;
+import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.concurrent.ExecutionException;
 
@@ -38,6 +42,7 @@ public class VET {
      * For more details, see <a href="https://tatum.io/apidoc#operation/VetEstimateGas" target="_blank">Tatum API documentation</a>
      */
     public VetEstimateGas vetEstimateGas(EstimateGasVet body) throws IOException, ExecutionException, InterruptedException {
+        // TO-DO
         // await validateOrReject(body);
         String uri = Strings.isNullOrEmpty(Env.getTatumApiKey()) ? TATUM_API_URL + "/v3/vet/broadcast/transaction/gas" : Env.getTatumApiKey();
         var objectMapper = new ObjectMapper();
@@ -47,47 +52,64 @@ public class VET {
         return new VetEstimateGas();
     }
 
-    ;
-    /*
-     *//**
+    /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/VetGetCurrentBlock" target="_blank">Tatum API documentation</a>
-     *//*
-    export const vetGetCurrentBlock = async (): Promise<number> => {
-        return (await axios.get(`${process.env.TATUM_API_URL || TATUM_API_URL}/v3/vet/current`, {headers: {'x-api-key': process.env.TATUM_API_KEY}})).data;
-    };
+     */
+    public BigDecimal vetGetCurrentBlock() throws IOException, ExecutionException, InterruptedException {
+        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/vet/current" : Env.getTatumApiUrl();
+        String block = Async.get(uri, Env.getTatumApiKey());
+        // TO-DO
+        return new BigDecimal(block);
+    }
 
-*//**
+    /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/VetGetBlock" target="_blank">Tatum API documentation</a>
-     *//*
-    export const vetGetBlock = async (hash: string): Promise<VetBlock> => {
-        return (await axios.get(`${process.env.TATUM_API_URL || TATUM_API_URL}/v3/vet/block/${hash}`, {headers: {'x-api-key': process.env.TATUM_API_KEY}})).data;
-    };
+     */
+    public VetBlock vetGetBlock(String hash) throws IOException, ExecutionException, InterruptedException {
+        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/vet/block/" + hash : Env.getTatumApiUrl();
+        String block = Async.get(uri, Env.getTatumApiKey());
+        // TO-DO
+        return new VetBlock();
+    }
 
-*//**
+    /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/VetGetBalance" target="_blank">Tatum API documentation</a>
-     *//*
-    export const vetGetAccountBalance = async (address: string): Promise<number> => {
-        return (await axios.get(`${process.env.TATUM_API_URL || TATUM_API_URL}/v3/vet/account/balance/${address}`, {headers: {'x-api-key': process.env.TATUM_API_KEY}})).data;
-    };
+     */
+    public BigDecimal vetGetAccountBalance(String address) throws IOException, ExecutionException, InterruptedException {
+        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/vet/account/balance/" + address : Env.getTatumApiUrl();
+        String balance = Async.get(uri, Env.getTatumApiKey());
+        // TO-DO
+        return new BigDecimal(balance);
+    }
 
-*//**
+    /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/VetGetEnergy" target="_blank">Tatum API documentation</a>
-     *//*
-    export const vetGetAccountEnergy = async (address: string): Promise<number> => {
-        return (await axios.get(`${process.env.TATUM_API_URL || TATUM_API_URL}/v3/vet/account/energy/${address}`, {headers: {'x-api-key': process.env.TATUM_API_KEY}})).data;
-    };
+     */
+    public BigDecimal vetGetAccountEnergy(String address) throws IOException, ExecutionException, InterruptedException {
+        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/vet/account/energy/" + address : Env.getTatumApiUrl();
+        String energy = Async.get(uri, Env.getTatumApiKey());
+        // TO-DO
+        return new BigDecimal(energy);
+    }
 
-*//**
+    /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/VetGetTransaction" target="_blank">Tatum API documentation</a>
-     *//*
-    export const vetGetTransaction = async (hash: string): Promise<VetTx> => {
-        return (await axios.get(`${process.env.TATUM_API_URL || TATUM_API_URL}/v3/vet/transaction/${hash}`, {headers: {'x-api-key': process.env.TATUM_API_KEY}})).data;
-    };
+     */
+    public VetTx vetGetTransaction(String hash) throws IOException, ExecutionException, InterruptedException {
+        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/vet/transaction/" + hash : Env.getTatumApiUrl();
+        String tx = Async.get(uri, Env.getTatumApiKey());
+        // TO-DO
+        return new VetTx();
+    }
 
-*//**
+    /**
      * For more details, see <a href="https://tatum.io/apidoc#operation/VetGetTransactionReceipt" target="_blank">Tatum API documentation</a>
-     *//*
-    export const vetGetTransactionReceipt = async (hash: string): Promise<VetTxReceipt> => {
-        return (await axios.get(`${process.env.TATUM_API_URL || TATUM_API_URL}/v3/vet/transaction/${hash}/receipt`, {headers: {'x-api-key': process.env.TATUM_API_KEY}})).data;
-    };*/
+     */
+    public VetTxReceipt vetGetTransactionReceipt(String hash) throws IOException, ExecutionException, InterruptedException {
+        String uri = Strings.isNullOrEmpty(Env.getTatumApiUrl()) ? TATUM_API_URL + "/v3/vet/transaction/" + hash + "/receipt" : Env.getTatumApiUrl();
+        String receipt = Async.get(uri, Env.getTatumApiKey());
+        // TO-DO
+        return new VetTxReceipt();
+    }
+
 }

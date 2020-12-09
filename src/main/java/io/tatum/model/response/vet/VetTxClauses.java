@@ -7,7 +7,7 @@ public class VetTxClauses {
      * @type {string}
      * @memberof VetTxClauses
      */
-    String to;
+    private String to;
 
     public String getTo() {
         return to;
@@ -22,7 +22,7 @@ public class VetTxClauses {
      * @type {string}
      * @memberof VetTxClauses
      */
-    String value;
+    private String value;
 
     public String getValue() {
         return value;
@@ -37,7 +37,7 @@ public class VetTxClauses {
      * @type {string}
      * @memberof VetTxClauses
      */
-    String data;
+    private String data;
 
     public String getData() {
         return data;

@@ -2,10 +2,6 @@ package io.tatum.blockchain;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.google.common.base.Strings;
-import io.tatum.model.response.btc.BtcBlock;
-import io.tatum.model.response.btc.BtcInfo;
-import io.tatum.model.response.btc.BtcTx;
-import io.tatum.model.response.btc.BtcUTXO;
 import io.tatum.model.response.common.*;
 import io.tatum.model.response.ltc.*;
 import io.tatum.utils.Async;

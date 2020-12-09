@@ -7,7 +7,7 @@ public class VetTxReceiptTransfers {
      * @type {string}
      * @memberof VetTxReceiptTransfers
      */
-    String sender;
+    private String sender;
 
     public String getSender() {
         return sender;
@@ -22,7 +22,7 @@ public class VetTxReceiptTransfers {
      * @type {string}
      * @memberof VetTxReceiptTransfers
      */
-    String recipient;
+    private String recipient;
 
     public String getRecipient() {
         return recipient;
@@ -37,7 +37,7 @@ public class VetTxReceiptTransfers {
      * @type {string}
      * @memberof VetTxReceiptTransfers
      */
-    String amount;
+    private String amount;
 
     public String getAmount() {
         return amount;

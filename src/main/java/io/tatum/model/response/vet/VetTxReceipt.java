@@ -9,7 +9,7 @@ public class VetTxReceipt {
      * @type {number}
      * @memberof VetTxReceipt
      */
-    BigDecimal gasUsed;
+    private BigDecimal gasUsed;
 
     public BigDecimal getGasUsed() {
         return gasUsed;
@@ -24,7 +24,7 @@ public class VetTxReceipt {
      * @type {string}
      * @memberof VetTxReceipt
      */
-    String gasPayer;
+    private String gasPayer;
 
     public String getGasPayer() {
         return gasPayer;
@@ -39,7 +39,7 @@ public class VetTxReceipt {
      * @type {string}
      * @memberof VetTxReceipt
      */
-    String paid;
+    private String paid;
 
     public String getPaid() {
         return paid;
@@ -54,7 +54,7 @@ public class VetTxReceipt {
      * @type {string}
      * @memberof VetTxReceipt
      */
-    String reward;
+    private String reward;
 
     public String getReward() {
         return reward;
@@ -69,7 +69,7 @@ public class VetTxReceipt {
      * @type {boolean}
      * @memberof VetTxReceipt
      */
-    Boolean reverted;
+    private Boolean reverted;
 
     public Boolean getReverted() {
         return reverted;
@@ -84,7 +84,7 @@ public class VetTxReceipt {
      * @type {VetTxReceiptMeta}
      * @memberof VetTxReceipt
      */
-    VetTxReceiptMeta meta;
+    private VetTxReceiptMeta meta;
 
     public VetTxReceiptMeta getMeta() {
         return meta;
@@ -99,7 +99,7 @@ public class VetTxReceipt {
      * @type {Array<VetTxReceiptOutputs>}
      * @memberof VetTxReceipt
      */
-    VetTxReceiptOutputs[] outputs;
+    private VetTxReceiptOutputs[] outputs;
 
     public VetTxReceiptOutputs[] getOutputs() {
         return outputs;
@@ -114,7 +114,7 @@ public class VetTxReceipt {
      * @type {number}
      * @memberof VetTxReceipt
      */
-    BigDecimal blockNumber;
+    private BigDecimal blockNumber;
 
     public BigDecimal getBlockNumber() {
         return blockNumber;
@@ -129,7 +129,7 @@ public class VetTxReceipt {
      * @type {string}
      * @memberof VetTxReceipt
      */
-    String blockHash;
+    private String blockHash;
 
     public String getBlockHash() {
         return blockHash;
@@ -144,7 +144,7 @@ public class VetTxReceipt {
      * @type {string}
      * @memberof VetTxReceipt
      */
-    String transactionHash;
+    private String transactionHash;
 
     public String getTransactionHash() {
         return transactionHash;
@@ -159,7 +159,7 @@ public class VetTxReceipt {
      * @type {string}
      * @memberof VetTxReceipt
      */
-    String status;
+    private String status;
 
     public String getStatus() {
         return status;
